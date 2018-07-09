@@ -14,14 +14,15 @@ Summary: Wikipedia is a Python library that makes it easy to access and parse da
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/wikipedia-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/wikipedia-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/wikipedia-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/wikipedia-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/wikipedia-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/wikipedia-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/wikipedia-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/wikipedia-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/wikipedia/badges/version.svg)](https://anaconda.org/conda-forge/wikipedia)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/wikipedia/badges/downloads.svg)](https://anaconda.org/conda-forge/wikipedia)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-wikipedia-green.svg)](https://anaconda.org/conda-forge/wikipedia) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/wikipedia.svg)](https://anaconda.org/conda-forge/wikipedia) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/wikipedia.svg)](https://anaconda.org/conda-forge/wikipedia) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/wikipedia.svg)](https://anaconda.org/conda-forge/wikipedia) |
 
 Installing wikipedia
 ====================
@@ -66,6 +67,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
