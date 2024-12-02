@@ -8,34 +8,39 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 2
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 3
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
     - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - beautifulsoup4
-    - requests        >=2.0.0,<3.0.0
+    - requests >=2.0.0,<3.0.0
 
 test:
+  requires:
+    - python {{ python_min }}
+    - pip
   imports:
     - wikipedia
+  commands:
+    - pip check
 
 about:
   home: https://github.com/goldsmith/Wikipedia
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Wikipedia is a Python library that makes it easy to access and parse data from Wikipedia.'
+  summary: Wikipedia is a Python library that makes it easy to access and parse data from Wikipedia.
 
   doc_url: https://wikipedia.readthedocs.io/en/latest/
   dev_url: https://github.com/goldsmith/Wikipedia
