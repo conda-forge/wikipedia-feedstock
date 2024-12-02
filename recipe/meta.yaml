@@ -14,7 +14,7 @@ source:
 build:
   noarch: python
   number: 3
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
@@ -29,8 +29,11 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
+    - pip
   imports:
     - wikipedia
+  commands:
+    - pip check
 
 about:
   home: https://github.com/goldsmith/Wikipedia
